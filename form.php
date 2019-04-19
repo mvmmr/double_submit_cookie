@@ -16,7 +16,7 @@
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
                 if (cookie.indexOf(csrfSearch) > -1) {
-                    csrfToken = cookie.substring(csrfSearch.length);
+                    csrfToken = decodeURIComponent(cookie.substring(csrfSearch.length));
                     break;
                 }
             }
