@@ -17,7 +17,8 @@ if (isset($_POST["submit"])) {
         if ($un === "admin" && $pw === "admin") {
             $_SESSION["logged_in"] = $un;
 
-            // TODO: create CSRF Cookie
+            // Create CSRF token
+            setcookie("csrf_token", base64_encode(random_bytes(32)));
 
             header("Location: index.php");
         } else {
