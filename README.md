@@ -5,7 +5,7 @@ Implement a web application that matches following criteria.
 
 - [x] User login. You may use hard coded user credentials for demonstration purpose.
 
-- [ ] Upon login, generate session identifier and set a cookie in the browser. At the same time, generate the CSRF token for the session and set a cookie in the browser. The CSRF token value is not stored in the server side.
+- [x] Upon login, generate session identifier and set a cookie in the browser. At the same time, generate the CSRF token for the session and set a cookie in the browser. The CSRF token value is not stored in the server side.
 
 - [ ] Implement a webpage that has a HTML form. The method should be POST and action should be another URL in the website.
 
