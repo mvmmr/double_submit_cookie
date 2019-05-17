@@ -1,5 +1,19 @@
 # Double Submit Cookies
 
+**Double submit cookie** is a technique used to mitigate **cross-site request forgery** attacks. In this technique, a CSRF token is generated, and is stored in a cookie on the user's browser. The cookie's value is read and inserted into forms as a hidden value. This value is then validated with the CSRF token value server-side.
+
+![Login](./img/fig-01.png)
+
+When the user logs in a random number is generated as the CSRF token for the session. This token is then stored as a cookie in the browser with the session cookie. 
+
+![Form Submit](./img/fig-02.png)
+
+When the user vists a page with a form, the CSRF cookie is read using Javascript, and it's value is added to the form as a hidden input. When the user submits the form, the CSRF token is also sent with the request. The server then compares the cookies recieved with the request and checks if the form value matches the cookie value. If they match, the request is successful.
+
+If an attacker tries to send a CSRF request, they will be unable to access user's cookies due to the "same-origin policy" enforced by the web browser. Therefore, the attackers requests will not be accepted by the server.
+
+By using this method, server-side processing is reduced, and the browser does not have to make AJAX requests on the user's behalf, unlike in the *synchronizer token pattern*. 
+
 ## Tasks
 Implement a web application that matches following criteria.
 
